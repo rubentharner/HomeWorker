@@ -1,0 +1,393 @@
+using System;
+
+//For lists
+using System.Collections.Generic;
+
+namespace E1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int myage = 18;
+            //var jaja = "Hoi";
+            //var hoihoi = 1;
+
+            //Change the appearance
+
+            Console.Title = "Oefenen";
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WindowHeight = 30;
+
+            /* methods
+            PrintNumber();
+            PrintNumber();
+            PrintNumber();
+
+            MeetAlien();
+
+            Console.WriteLine("--------------------");
+
+            MeetAlien();
+
+            int result = Multiply(3, 5);
+            Console.WriteLine("The result is " + result);
+
+            if (result % 2 == 0)
+            {
+                Console.WriteLine(result + " is an even number!");
+            } else
+            {
+                Console.WriteLine(result + " is an uneven number!");
+            }
+
+
+            Console.WriteLine("Enter a sentence: ");
+
+            string sentence = Console.ReadLine();
+
+            int wordcount = CountWords(sentence);
+
+            Console.WriteLine("There are " + wordcount + " words in that sentence.");
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //Eigen oefening alfabetische order
+            Console.Write("How many students are in your class: ");
+            int studenten = Convert.ToInt32(Console.ReadLine());
+            string[] klas = new string[studenten];
+            Console.WriteLine("Wat zijn de namen van de studenten: ");
+            for (int i = 0; i < klas.Length; i++)
+            {
+                klas[i] = Console.ReadLine();
+            }
+
+            Console.WriteLine("--------");
+            Array.Sort(klas);
+            for (int i = 0; i < klas.Length; i++)
+            {
+                Console.WriteLine(klas[i]);
+            }
+
+            /*
+
+            List<string> shoppingList = new List<string>();
+
+            shoppingList.Add("Dreams");
+            shoppingList.Add("Miracles");
+            shoppingList.Add("Rainbows");
+            shoppingList.Add("Pony");
+
+            for(int i = 0; i < shoppingList.Count; i++)
+            {
+                Console.WriteLine(shoppingList[i]);
+            }
+
+            shoppingList.Remove("Dreams");
+            shoppingList.RemoveAt(1);
+
+            Console.WriteLine("------------");
+            for (int i = 0; i < shoppingList.Count; i++)
+            {
+                Console.WriteLine(shoppingList[i]);
+            }
+
+            /* non list knowing how many items
+            string[] movies = new string[4];
+
+            Console.WriteLine("Type in four movies: ");
+
+            for(int i = 0; i <movies.Length; i++)
+            {
+                movies[i] = Console.ReadLine();
+            }
+
+            Console.WriteLine("\nHere they are alphabetically: ");
+            
+            Array.Sort(movies);
+            for(int i = 0; i<movies.Length; i++)
+            {
+                Console.WriteLine(movies[i]);
+            }
+
+            /*
+            string[] movies = { "Lord of the Rings", "Fight Club", "Interstellar", "Gladiator" };
+            for (int i = 0; i < movies.Length; i++)
+            {
+                int rank = i + 1;
+                Console.WriteLine(rank + ". " + movies[i]);
+            }
+           
+
+
+
+
+
+
+
+            
+
+
+            //While and For
+            Random numberGen = new Random();
+     
+            
+            int roll = 0;
+            int roll2 = 1;
+            int attempts = 0;
+
+            Console.WriteLine("Press enter to roll the die.");
+            
+            while (roll2 != roll)
+            {
+                Console.ReadKey();
+                roll = numberGen.Next(1, 7);
+                roll2 = numberGen.Next(1, 7);
+                Console.WriteLine("Dice 1: " + roll);
+                Console.WriteLine("Dice 2: " + roll2);
+                attempts++;
+            }
+
+            Console.WriteLine("It took you "+ attempts + " attempts to roll two of a kind.");
+
+
+            Console.Write("How many cool numbers do you want: ");
+            int count = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Welke macht: ");
+            int count2 = Convert.ToInt32(Console.ReadLine());
+
+            for (double i = 1; i <= count; i++) 
+            {
+                double result = Math.Pow(count2, i);
+                Console.WriteLine(result);
+            }
+
+
+
+
+
+
+            
+
+            
+            
+            
+            
+            //IF
+            
+            Console.Write("Input a number between 1 and 3: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+           
+            if (num == 1) {
+                Console.WriteLine("One");
+            } else if (num == 2) {
+                Console.WriteLine("Two");
+            } else if (num == 3) {
+                Console.WriteLine("Three");
+            }
+           
+            switch (num) {
+                case 1:
+                    Console.WriteLine("One");
+                    break;
+                case 2:
+                    Console.WriteLine("Two");
+                    break;
+                case 3:
+                    Console.WriteLine("Three");
+                    break;
+                default:
+                    Console.WriteLine("Default");
+                        break;
+            }
+           
+            int v1;
+            int v2;
+            int v3;
+            int v4;
+            int v5;
+
+            Console.Write("Los op: 1+1 = ");
+            v1 = Convert.ToInt32(Console.ReadLine());
+            if (v1 == 2)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine("Dat is fout!");
+            }
+
+            Console.Write("Los op: 4+7 = ");
+            v2 = Convert.ToInt32(Console.ReadLine());
+            if (v2 == 11)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine("Dat is fout!");
+            }
+            Console.Write("Los op: 7x4 = ");
+            v3 = Convert.ToInt32(Console.ReadLine());
+            if (v3 == 28)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine("Dat is fout!");
+            }
+            Console.Write("Los op: 45/9 = ");
+            v4 = Convert.ToInt32(Console.ReadLine());
+            if (v4 == 5)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine("Dat is fout!");
+            }
+            Console.Write("Los op: 7+9/8 = ");
+            v5 = Convert.ToInt32(Console.ReadLine());
+            if (v5 == 2)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine("Dat is fout!");
+            }
+            
+            Console.WriteLine("Welcome! Tickets are 5$. Please insert cash.");
+            
+            int cash = Convert.ToInt32(Console.ReadLine());
+
+            if (cash < 5) 
+            {
+                Console.WriteLine("That's not enough money!");
+            }
+            else if (cash == 5)
+            {
+                Console.WriteLine("Here is your ticket.");
+            } 
+            else
+            {
+                int change = cash - 5;
+                Console.WriteLine("Here is your ticket and " + change + " dollars in change.");
+            }
+
+
+
+
+            
+
+
+
+            
+           
+
+
+
+
+            //Variabelen en berekenen
+            double num01;
+            double num02;
+            double num03;
+
+            Console.Write("Input a number: ");
+            num01 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Input a second number: ");
+            num02 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Input a third number: ");
+            num03 = Convert.ToDouble(Console.ReadLine());
+
+            double gemiddelde = (num01 + num02 + num03)/3;
+            Console.WriteLine("The result is " + gemiddelde);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            //Get a conversation going
+            Console.WriteLine("Hello, what's your name?");
+
+            string userName = Console.ReadLine();
+
+            Console.WriteLine("Hello " + userName + ", nice to meet you!");
+
+            Console.ReadLine(); //This works
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("My name is RX-9000.\nI'm an AI sent from the future to destroy mankind.");
+            Console.WriteLine("What is your favorite color?");
+
+            Console.ReadLine();
+
+            Console.WriteLine("Cool! Mine is destruction.");
+            */
+            //Wait before closing
+            Console.ReadKey();
+
+
+
+
+
+        }
+        static void PrintNumber()
+        {
+            Random numGen = new Random();
+            int number = numGen.Next(0, 10);
+            Console.WriteLine(number);
+        }
+
+        static void MeetAlien()
+        {
+            Random numGen = new Random();
+            string name = "X-" + numGen.Next(10, 9999);
+            int age = numGen.Next(10, 500);
+
+            Console.WriteLine("Hi, I'm " + name);
+            Console.WriteLine("I'm "+ age + " years old.");
+            Console.WriteLine("Oh, and I'm an alien.");
+        }
+
+        static int Multiply(int num01, int num02)
+        {
+            int result = num01 * num02;
+            return result;
+        }
+
+        static int CountWords (string sentence)
+        {
+            int wordcount = sentence.Split(' ').Length;
+
+            return wordcount;
+        }
+    }
+}
